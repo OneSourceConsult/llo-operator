@@ -1,0 +1,742 @@
+{
+  "id": "644a4a555e06e400011a5b3a",
+  "owner": "cyango-xr-developer",
+  "company": "cyango",
+  "access": "MY_COMPANY",
+  "networkServiceName": "Cyango Cloud Studio - reimported",
+  "networkServiceDescription": "",
+  "version": "",
+  "globalInputParameters": [],
+  "connectionPoints": [],
+  "eds": [
+    {
+      "name": "charity-kafka",
+      "connectionPoints": [
+        {
+          "name": "CH-KAFKA",
+          "port": 9092,
+          "protocol": "TCP",
+          "index": 0,
+          "px": 0,
+          "py": 0,
+          "weight": 0,
+          "x": 175.05591622261161,
+          "y": 191.4064525226804
+        }
+      ],
+      "imageType": "EXTERNAL",
+      "deploymentNodeType": null,
+      "locationInputParameter": {
+        "name": null,
+        "type": null,
+        "value": "",
+        "geoRegion": "",
+        "geoCountry": "",
+        "geoCity": "",
+        "geoLatitude": "",
+        "geoLongitude": "",
+        "geoExactMatch": false
+      },
+      "locationDefinitionType": null,
+      "locationInputName": null,
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 177.21505588625408,
+      "y": 64.9354860544329
+    },
+    {
+      "name": "AmazonS3",
+      "connectionPoints": [
+        {
+          "name": "AWS-S3",
+          "port": 0,
+          "protocol": "TCP",
+          "index": 0,
+          "px": 0,
+          "py": 0,
+          "weight": 0,
+          "x": 431.0795698318213,
+          "y": 183.84946369993122
+        }
+      ],
+      "imageType": "EXTERNAL",
+      "deploymentNodeType": null,
+      "locationInputParameter": {
+        "name": null,
+        "type": null,
+        "value": "",
+        "geoRegion": "",
+        "geoCountry": "",
+        "geoCity": "",
+        "geoLatitude": "",
+        "geoLongitude": "",
+        "geoExactMatch": false
+      },
+      "locationDefinitionType": null,
+      "locationInputName": null,
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 432.1591396636427,
+      "y": 67.09462571807548
+    }
+  ],
+  "vnfs": [
+    {
+      "name": "cyango-backend",
+      "image": "repository.charity-project.eu/dotes/cyango-backend:production",
+      "imageType": "CONTAINER",
+      "registryType": null,
+      "deploymentNodeType": "CLOUD",
+      "replicasSupport": false,
+      "replicasNumber": "",
+      "connectionPoints": [
+        {
+          "name": "CY_BACK",
+          "port": 32777,
+          "protocol": "TCP",
+          "index": 0,
+          "px": 0,
+          "py": 0,
+          "weight": 0,
+          "x": 629.886022354501,
+          "y": 178.4516145408246
+        }
+      ],
+      "customParameters": [],
+      "inputParameters": null,
+      "shared": false,
+      "hwRequirements": {
+        "numCpu": 0,
+        "ramMB": 0,
+        "diskGB": 0,
+        "needsGpu": false,
+        "numGpu": 0,
+        "gpuType": null,
+        "gpuMode": null,
+        "osArchitecture": null,
+        "osType": null,
+        "osDistribution": null
+      },
+      "storageRequirements": [],
+      "locationInputParameter": {
+        "name": null,
+        "type": null,
+        "value": "",
+        "geoRegion": "",
+        "geoCountry": "",
+        "geoCity": "",
+        "geoLatitude": "",
+        "geoLongitude": "",
+        "geoExactMatch": false
+      },
+      "locationDefinitionType": null,
+      "locationInputName": null,
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 629.886022354501,
+      "y": 74.65161454082468
+    },
+    {
+      "name": "cyango-database",
+      "image": "repository.charity-project.eu/dotes/cyango-database:production",
+      "imageType": "CONTAINER",
+      "registryType": null,
+      "deploymentNodeType": "CLOUD",
+      "replicasSupport": false,
+      "replicasNumber": "",
+      "connectionPoints": [
+        {
+          "name": "CY_DB",
+          "port": 27107,
+          "protocol": "TCP",
+          "index": 0,
+          "px": 0,
+          "py": 0,
+          "weight": 0,
+          "x": 844.886022354501,
+          "y": 178.4516145408246
+        }
+      ],
+      "customParameters": [],
+      "inputParameters": null,
+      "shared": false,
+      "hwRequirements": {
+        "numCpu": 0,
+        "ramMB": 0,
+        "diskGB": 0,
+        "needsGpu": false,
+        "numGpu": 0,
+        "gpuType": null,
+        "gpuMode": null,
+        "osArchitecture": null,
+        "osType": null,
+        "osDistribution": null
+      },
+      "storageRequirements": [],
+      "locationInputParameter": {
+        "name": null,
+        "type": null,
+        "value": "",
+        "geoRegion": "",
+        "geoCountry": "",
+        "geoCity": "",
+        "geoLatitude": "",
+        "geoLongitude": "",
+        "geoExactMatch": false
+      },
+      "locationDefinitionType": null,
+      "locationInputName": null,
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 844.886022354501,
+      "y": 74.65161454082468
+    },
+    {
+      "name": "cyango-cloud-editor",
+      "image": "repository.charity-project.eu/dotes/cyango-cloud-editor:production",
+      "imageType": "CONTAINER",
+      "registryType": null,
+      "deploymentNodeType": "CLOUD",
+      "replicasSupport": false,
+      "replicasNumber": "",
+      "connectionPoints": [
+        {
+          "name": "CY_CLOUD_EDITOR",
+          "port": 0,
+          "protocol": "TCP",
+          "index": 0,
+          "px": 0,
+          "py": 0,
+          "weight": 0,
+          "x": 1059.8860223545016,
+          "y": 178.4516145408246
+        }
+      ],
+      "customParameters": [],
+      "inputParameters": null,
+      "shared": false,
+      "hwRequirements": {
+        "numCpu": 0,
+        "ramMB": 0,
+        "diskGB": 0,
+        "needsGpu": false,
+        "numGpu": 0,
+        "gpuType": null,
+        "gpuMode": null,
+        "osArchitecture": null,
+        "osType": null,
+        "osDistribution": null
+      },
+      "storageRequirements": [],
+      "locationInputParameter": {
+        "name": null,
+        "type": null,
+        "value": "",
+        "geoRegion": "",
+        "geoCountry": "",
+        "geoCity": "",
+        "geoLatitude": "",
+        "geoLongitude": "",
+        "geoExactMatch": false
+      },
+      "locationDefinitionType": null,
+      "locationInputName": null,
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 1059.8860223545016,
+      "y": 74.65161454082468
+    },
+    {
+      "name": "cyango-story",
+      "image": "repository.charity-project.eu/dotes/cyango-story:production",
+      "imageType": "CONTAINER",
+      "registryType": null,
+      "deploymentNodeType": "CLOUD",
+      "replicasSupport": false,
+      "replicasNumber": "",
+      "connectionPoints": [
+        {
+          "name": "CY_STORY",
+          "port": 0,
+          "protocol": "TCP",
+          "index": 0,
+          "px": 0,
+          "py": 0,
+          "weight": 0,
+          "x": 1274.8860223545012,
+          "y": 178.4516145408246
+        }
+      ],
+      "customParameters": [],
+      "inputParameters": null,
+      "shared": false,
+      "hwRequirements": {
+        "numCpu": 0,
+        "ramMB": 0,
+        "diskGB": 0,
+        "needsGpu": false,
+        "numGpu": 0,
+        "gpuType": null,
+        "gpuMode": null,
+        "osArchitecture": null,
+        "osType": null,
+        "osDistribution": null
+      },
+      "storageRequirements": [],
+      "locationInputParameter": {
+        "name": null,
+        "type": null,
+        "value": "",
+        "geoRegion": "",
+        "geoCountry": "",
+        "geoCity": "",
+        "geoLatitude": "",
+        "geoLongitude": "",
+        "geoExactMatch": false
+      },
+      "locationDefinitionType": null,
+      "locationInputName": null,
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 1274.8860223545012,
+      "y": 74.65161454082468
+    },
+    {
+      "name": "cyango-worker",
+      "image": "repository.charity-project.eu/dotes/cyango-worker:production",
+      "imageType": "CONTAINER",
+      "registryType": null,
+      "deploymentNodeType": "CLOUD",
+      "replicasSupport": false,
+      "replicasNumber": "",
+      "connectionPoints": [
+        {
+          "name": "CY_WORKER",
+          "port": 0,
+          "protocol": "TCP",
+          "index": 0,
+          "px": 0,
+          "py": 0,
+          "weight": 0,
+          "x": 1489.8860223545012,
+          "y": 178.4516145408246
+        }
+      ],
+      "customParameters": [],
+      "inputParameters": null,
+      "shared": false,
+      "hwRequirements": {
+        "numCpu": 0,
+        "ramMB": 0,
+        "diskGB": 0,
+        "needsGpu": false,
+        "numGpu": 0,
+        "gpuType": null,
+        "gpuMode": null,
+        "osArchitecture": null,
+        "osType": null,
+        "osDistribution": null
+      },
+      "storageRequirements": [],
+      "locationInputParameter": {
+        "name": null,
+        "type": null,
+        "value": "",
+        "geoRegion": "",
+        "geoCountry": "",
+        "geoCity": "",
+        "geoLatitude": "",
+        "geoLongitude": "",
+        "geoExactMatch": false
+      },
+      "locationDefinitionType": null,
+      "locationInputName": null,
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 1489.8860223545012,
+      "y": 74.65161454082468
+    }
+  ],
+  "networkServices": [],
+  "virtualLinks": [
+    {
+      "name": "VL1",
+      "connectedPoints": [
+        "charity-kafka:CH-KAFKA",
+        "cyango-backend:CY_BACK"
+      ],
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 482.59496570286416,
+      "y": 282.2516145408248,
+      "qosItems": [
+        {
+          "name": "bandwidth",
+          "value": "50",
+          "unit": "Kbps",
+          "label": "bandwidth Min",
+          "slider": true,
+          "max": 1000,
+          "min": 0
+        },
+        {
+          "name": "latency",
+          "value": "5",
+          "unit": "ms",
+          "label": "latency Max",
+          "slider": true,
+          "max": 10000,
+          "min": 0
+        },
+        {
+          "name": "jitter",
+          "value": "100",
+          "unit": "ms",
+          "label": "jitter Max",
+          "slider": true,
+          "max": 100,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "name": "VL2",
+      "connectedPoints": [
+        "AmazonS3:AWS-S3",
+        "cyango-backend:CY_BACK"
+      ],
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 619.2667381414383,
+      "y": 232.98886248679102,
+      "qosItems": [
+        {
+          "name": "bandwidth",
+          "value": "0",
+          "unit": "Mbps",
+          "label": "bandwidth Min",
+          "slider": true,
+          "max": 1000,
+          "min": 0
+        },
+        {
+          "name": "latency",
+          "value": "10000",
+          "unit": "ms",
+          "label": "latency Max",
+          "slider": true,
+          "max": 10000,
+          "min": 0
+        },
+        {
+          "name": "jitter",
+          "value": "100",
+          "unit": "ms",
+          "label": "jitter Max",
+          "slider": true,
+          "max": 100,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "name": "VL3",
+      "connectedPoints": [
+        "charity-kafka:CH-KAFKA",
+        "cyango-worker:CY_WORKER"
+      ],
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 841.970023787695,
+      "y": 501.83011939402604,
+      "qosItems": [
+        {
+          "name": "bandwidth",
+          "value": "0",
+          "unit": "Mbps",
+          "label": "bandwidth Min",
+          "slider": true,
+          "max": 1000,
+          "min": 0
+        },
+        {
+          "name": "latency",
+          "value": "110",
+          "unit": "ms",
+          "label": "latency Max",
+          "slider": true,
+          "max": 10000,
+          "min": 0
+        },
+        {
+          "name": "jitter",
+          "value": "100",
+          "unit": "ms",
+          "label": "jitter Max",
+          "slider": true,
+          "max": 100,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "name": "VL4",
+      "connectedPoints": [
+        "cyango-backend:CY_BACK",
+        "cyango-database:CY_DB"
+      ],
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 749.3304667989455,
+      "y": 255.2623687452921,
+      "qosItems": [
+        {
+          "name": "bandwidth",
+          "value": "0",
+          "unit": "Mbps",
+          "label": "bandwidth Min",
+          "slider": true,
+          "max": 1000,
+          "min": 0
+        },
+        {
+          "name": "latency",
+          "value": "10000",
+          "unit": "ms",
+          "label": "latency Max",
+          "slider": true,
+          "max": 10000,
+          "min": 0
+        },
+        {
+          "name": "jitter",
+          "value": "100",
+          "unit": "ms",
+          "label": "jitter Max",
+          "slider": true,
+          "max": 100,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "name": "VL5",
+      "connectedPoints": [
+        "cyango-backend:CY_BACK",
+        "cyango-cloud-editor:CY_CLOUD_EDITOR"
+      ],
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 900.4974941326674,
+      "y": 262.8193575680413,
+      "qosItems": [
+        {
+          "name": "bandwidth",
+          "value": "0",
+          "unit": "Mbps",
+          "label": "bandwidth Min",
+          "slider": true,
+          "max": 1000,
+          "min": 0
+        },
+        {
+          "name": "latency",
+          "value": "10000",
+          "unit": "ms",
+          "label": "latency Max",
+          "slider": true,
+          "max": 10000,
+          "min": 0
+        },
+        {
+          "name": "jitter",
+          "value": "100",
+          "unit": "ms",
+          "label": "jitter Max",
+          "slider": true,
+          "max": 100,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "name": "VL6",
+      "connectedPoints": [
+        "cyango-backend:CY_BACK",
+        "cyango-story:CY_STORY"
+      ],
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 1088.3698957483148,
+      "y": 244.46667042707892,
+      "qosItems": [
+        {
+          "name": "bandwidth",
+          "value": "0",
+          "unit": "Mbps",
+          "label": "bandwidth Min",
+          "slider": true,
+          "max": 1000,
+          "min": 0
+        },
+        {
+          "name": "latency",
+          "value": "10000",
+          "unit": "ms",
+          "label": "latency Max",
+          "slider": true,
+          "max": 10000,
+          "min": 0
+        },
+        {
+          "name": "jitter",
+          "value": "100",
+          "unit": "ms",
+          "label": "jitter Max",
+          "slider": true,
+          "max": 100,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "name": "VL7",
+      "connectedPoints": [
+        "AmazonS3:AWS-S3",
+        "cyango-cloud-editor:CY_CLOUD_EDITOR"
+      ],
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 862.4046096546506,
+      "y": 338.24348571431835,
+      "qosItems": [
+        {
+          "name": "bandwidth",
+          "value": "0",
+          "unit": "Mbps",
+          "label": "bandwidth Min",
+          "slider": true,
+          "max": 1000,
+          "min": 0
+        },
+        {
+          "name": "latency",
+          "value": "10000",
+          "unit": "ms",
+          "label": "latency Max",
+          "slider": true,
+          "max": 10000,
+          "min": 0
+        },
+        {
+          "name": "jitter",
+          "value": "100",
+          "unit": "ms",
+          "label": "jitter Max",
+          "slider": true,
+          "max": 100,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "name": "VL8",
+      "connectedPoints": [
+        "AmazonS3:AWS-S3",
+        "cyango-story:CY_STORY"
+      ],
+      "index": 0,
+      "px": 0,
+      "py": 0,
+      "weight": 0,
+      "x": 903.5777073859833,
+      "y": 402.6202154138505,
+      "qosItems": [
+        {
+          "name": "bandwidth",
+          "value": "0",
+          "unit": "Mbps",
+          "label": "bandwidth Min",
+          "slider": true,
+          "max": 1000,
+          "min": 0
+        },
+        {
+          "name": "latency",
+          "value": "10000",
+          "unit": "ms",
+          "label": "latency Max",
+          "slider": true,
+          "max": 10000,
+          "min": 0
+        },
+        {
+          "name": "jitter",
+          "value": "100",
+          "unit": "ms",
+          "label": "jitter Max",
+          "slider": true,
+          "max": 100,
+          "min": 0
+        }
+      ]
+    }
+  ],
+  "qosUnits": {
+    "jitter": [
+      {
+        "label": "ms",
+        "value": "MS"
+      }
+    ],
+    "bandwidth": [
+      {
+        "label": "Kbps",
+        "value": "KBPS"
+      },
+      {
+        "label": "Mbps",
+        "value": "MBPS"
+      },
+      {
+        "label": "Gbps",
+        "value": "GBPS"
+      }
+    ],
+    "latency": [
+      {
+        "label": "ms",
+        "value": "MS"
+      }
+    ]
+  },
+  "toscaModel": "tosca_definitions_version: tosca_simple_yaml_1_3\n\ndescription: \n\nmetadata:\n  # The following fields are \"normative\" and expected in TOSCA \n  template_name: Cyango Cloud Studio - reimported\n  template_author:  cyango-xr-developer\n  template_version: ''\n\nimports:\n  - charity_custom_types_v08.yaml\n\ntopology_template:\n  inputs:\n  node_templates:\n    charity-kafka:\n      type: Charity.Component\n      properties:\n        name: charity-kafka\n        deployment_unit: EXTERNAL\n    AmazonS3:\n      type: Charity.Component\n      properties:\n        name: amazons3\n        deployment_unit: EXTERNAL\n    cyango-backend:\n      type: Charity.Component\n      properties:\n        name: cyango-backend\n        deployment_unit: K8S_POD\n        placement_hint: CLOUD\n        image: repository.charity-project.eu/dotes/cyango-backend:production\n      requirements:\n        - host: cyango-backendNode\n    cyango-backendNode:\n      type: Charity.Node\n      node_filter:\n        capabilities:\n          - host:\n              properties:\n                num_cpus: \n                  - equal: 0 \n                mem_size: \n                  - greater_than: 0 MB\n \n    cyango-database:\n      type: Charity.Component\n      properties:\n        name: cyango-database\n        deployment_unit: K8S_POD\n        placement_hint: CLOUD\n        image: repository.charity-project.eu/dotes/cyango-database:production\n      requirements:\n        - host: cyango-databaseNode\n    cyango-databaseNode:\n      type: Charity.Node\n      node_filter:\n        capabilities:\n          - host:\n              properties:\n                num_cpus: \n                  - equal: 0 \n                mem_size: \n                  - greater_than: 0 MB\n \n    cyango-cloud-editor:\n      type: Charity.Component\n      properties:\n        name: cyango-cloud-editor\n        deployment_unit: K8S_POD\n        placement_hint: CLOUD\n        image: repository.charity-project.eu/dotes/cyango-cloud-editor:production\n      requirements:\n        - host: cyango-cloud-editorNode\n    cyango-cloud-editorNode:\n      type: Charity.Node\n      node_filter:\n        capabilities:\n          - host:\n              properties:\n                num_cpus: \n                  - equal: 0 \n                mem_size: \n                  - greater_than: 0 MB\n \n    cyango-story:\n      type: Charity.Component\n      properties:\n        name: cyango-story\n        deployment_unit: K8S_POD\n        placement_hint: CLOUD\n        image: repository.charity-project.eu/dotes/cyango-story:production\n      requirements:\n        - host: cyango-storyNode\n    cyango-storyNode:\n      type: Charity.Node\n      node_filter:\n        capabilities:\n          - host:\n              properties:\n                num_cpus: \n                  - equal: 0 \n                mem_size: \n                  - greater_than: 0 MB\n \n    cyango-worker:\n      type: Charity.Component\n      properties:\n        name: cyango-worker\n        deployment_unit: K8S_POD\n        placement_hint: CLOUD\n        image: repository.charity-project.eu/dotes/cyango-worker:production\n      requirements:\n        - host: cyango-workerNode\n    cyango-workerNode:\n      type: Charity.Node\n      node_filter:\n        capabilities:\n          - host:\n              properties:\n                num_cpus: \n                  - equal: 0 \n                mem_size: \n                  - greater_than: 0 MB\n \n    VL1:\n      type: Charity.VirtualLink\n      properties:\n        name: VL1\n      node_filter:\n        capabilities:\n        - network:\n            properties:\n              bandwidth:\n              - greater_or_equal: 50 Kbps            \n              latency:\n              - less_than: 5 ms\n              jitter:\n              - less_than: 100 ms\n    VL2:\n      type: Charity.VirtualLink\n      properties:\n        name: VL2\n      node_filter:\n        capabilities:\n        - network:\n            properties:\n              bandwidth:\n              - greater_or_equal: 0 Mbps            \n              latency:\n              - less_than: 10000 ms\n              jitter:\n              - less_than: 100 ms\n    VL3:\n      type: Charity.VirtualLink\n      properties:\n        name: VL3\n      node_filter:\n        capabilities:\n        - network:\n            properties:\n              bandwidth:\n              - greater_or_equal: 0 Mbps            \n              latency:\n              - less_than: 110 ms\n              jitter:\n              - less_than: 100 ms\n    VL4:\n      type: Charity.VirtualLink\n      properties:\n        name: VL4\n      node_filter:\n        capabilities:\n        - network:\n            properties:\n              bandwidth:\n              - greater_or_equal: 0 Mbps            \n              latency:\n              - less_than: 10000 ms\n              jitter:\n              - less_than: 100 ms\n    VL5:\n      type: Charity.VirtualLink\n      properties:\n        name: VL5\n      node_filter:\n        capabilities:\n        - network:\n            properties:\n              bandwidth:\n              - greater_or_equal: 0 Mbps            \n              latency:\n              - less_than: 10000 ms\n              jitter:\n              - less_than: 100 ms\n    VL6:\n      type: Charity.VirtualLink\n      properties:\n        name: VL6\n      node_filter:\n        capabilities:\n        - network:\n            properties:\n              bandwidth:\n              - greater_or_equal: 0 Mbps            \n              latency:\n              - less_than: 10000 ms\n              jitter:\n              - less_than: 100 ms\n    VL7:\n      type: Charity.VirtualLink\n      properties:\n        name: VL7\n      node_filter:\n        capabilities:\n        - network:\n            properties:\n              bandwidth:\n              - greater_or_equal: 0 Mbps            \n              latency:\n              - less_than: 10000 ms\n              jitter:\n              - less_than: 100 ms\n    VL8:\n      type: Charity.VirtualLink\n      properties:\n        name: VL8\n      node_filter:\n        capabilities:\n        - network:\n            properties:\n              bandwidth:\n              - greater_or_equal: 0 Mbps            \n              latency:\n              - less_than: 10000 ms\n              jitter:\n              - less_than: 100 ms\n    CH-KAFKA:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CH-KAFKA\n        port: 9092\n        protocol: TCP\n      requirements:\n        - binding:\n            node: charity-kafka\n        - link: \n            node: VL1\n    CY_BACK:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_BACK\n        port: 32777\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-backend\n        - link: \n            node: VL1\n    AWS-S3:\n      type: Charity.ConnectionPoint\n      properties:\n        name: AWS-S3\n        protocol: TCP\n      requirements:\n        - binding:\n            node: AmazonS3\n        - link: \n            node: VL2\n    CY_BACK:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_BACK\n        port: 32777\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-backend\n        - link: \n            node: VL2\n    CH-KAFKA:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CH-KAFKA\n        port: 9092\n        protocol: TCP\n      requirements:\n        - binding:\n            node: charity-kafka\n        - link: \n            node: VL3\n    CY_WORKER:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_WORKER\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-worker\n        - link: \n            node: VL3\n    CY_BACK:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_BACK\n        port: 32777\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-backend\n        - link: \n            node: VL4\n    CY_DB:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_DB\n        port: 27106\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-database\n        - link: \n            node: VL4\n    CY_BACK:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_BACK\n        port: 32777\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-backend\n        - link: \n            node: VL5\n    CY_CLOUD_EDITOR:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_CLOUD_EDITOR\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-cloud-editor\n        - link: \n            node: VL5\n    CY_BACK:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_BACK\n        port: 32777\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-backend\n        - link: \n            node: VL6\n    CY_STORY:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_STORY\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-story\n        - link: \n            node: VL6\n    AWS-S3:\n      type: Charity.ConnectionPoint\n      properties:\n        name: AWS-S3\n        protocol: TCP\n      requirements:\n        - binding:\n            node: AmazonS3\n        - link: \n            node: VL7\n    CY_CLOUD_EDITOR:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_CLOUD_EDITOR\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-cloud-editor\n        - link: \n            node: VL7\n    AWS-S3:\n      type: Charity.ConnectionPoint\n      properties:\n        name: AWS-S3\n        protocol: TCP\n      requirements:\n        - binding:\n            node: AmazonS3\n        - link: \n            node: VL8\n    CY_STORY:\n      type: Charity.ConnectionPoint\n      properties:\n        name: CY_STORY\n        protocol: TCP\n      requirements:\n        - binding:\n            node: cyango-story\n        - link: \n            node: VL8\n\n\n"
+}

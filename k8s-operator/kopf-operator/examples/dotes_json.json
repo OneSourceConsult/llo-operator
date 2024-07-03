@@ -1,0 +1,132 @@
+{
+  "cluster": "kubeadm-based-orchestration-green",
+  "name": "dotes",
+  "apps": [
+    {
+      "name": "dotes",
+      "owner": "cyango-xr-developer",
+      "cluster": "kubeadm-based-orchestration-green",
+      "components": [
+        {
+          "name": "cyango-story-express",
+          "cluster-selector": "rose",
+          "image": "repository.charity-project.eu/dotes/cyango-story-express:beta",
+          "expose": [
+            {
+              "is-public": true,
+              "is-peered": true,
+              "containerPort": 443,
+              "clusterPort": 443
+            }
+          ],
+          "env": {
+            "is-secret": false,
+            "variables": [
+              {
+                "name": "NODE_ENV",
+                "value": "beta"
+              }
+            ]
+          },
+          "tls": {
+            "name": "cyango-certificate"
+          }
+        },
+        {
+          "name": "cyango-worker",
+          "cluster-selector": "kubeadm-based-orchestration-green",
+          "image": "repository.charity-project.eu/dotes/cyango-worker:beta",
+          "env": {
+            "is-secret": false,
+            "variables": [
+              {
+                "name": "NODE_ENV",
+                "value": "beta"
+              }
+            ]
+          }
+        },
+        {
+          "name": "cyango-database",
+          "cluster-selector": "kubeadm-based-orchestration-green",
+          "image": "repository.charity-project.eu/dotes/cyango-database:beta",
+          "expose": [
+            {
+              "is-public": false,
+              "is-peered": true,
+              "containerPort": 27017,
+              "clusterPort": 27017
+            }
+          ],
+          "env": {
+            "is-secret": false,
+            "variables": [
+              {
+                "name": "MONGO_INITDB_PWD",
+                "value": "PUkkwM7sgPYZgGZc7sTkSBnGixNhvbfM"
+              },
+              {
+                "name": "MONGO_INITDB_USER",
+                "value": "cyadmin"
+              },
+              {
+                "name": "MONGO_INITDB_DATABASE",
+                "value": "cyango_database_beta"
+              }
+            ]
+          }
+        },
+        {
+          "name": "cyango-cloud-editor",
+          "cluster-selector": "kubeadm-based-orchestration-rose",
+          "image": "repository.charity-project.eu/dotes/cyango-cloud-editor:beta",
+          "expose": [
+            {
+              "is-public": true,
+              "is-peered": true,
+              "containerPort": 443,
+              "clusterPort": 443
+            }
+          ],
+          "env": {
+            "is-secret": false,
+            "variables": [
+              {
+                "name": "NODE_ENV",
+                "value": "beta"
+              }
+            ]
+          },
+          "tls": {
+            "name": "cyango-certificate"
+          }
+        },
+        {
+          "name": "cyango-backend",
+          "cluster-selector": "kubeadm-based-orchestration-rose",
+          "image": "repository.charity-project.eu/dotes/cyango-backend:beta",
+          "expose": [
+            {
+              "is-public": true,
+              "is-peered": true,
+              "containerPort": 32777,
+              "clusterPort": 32777
+            }
+          ],
+          "env": {
+            "is-secret": false,
+            "variables": [
+              {
+                "name": "NODE_ENV",
+                "value": "beta"
+              }
+            ]
+          },
+          "tls": {
+            "name": "cyango-certificate"
+          }
+        }
+      ]
+    }
+  ]
+}

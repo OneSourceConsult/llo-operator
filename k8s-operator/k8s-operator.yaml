@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kopf-operator
+  namespace: orchestration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kopf-operator
+  template:
+    metadata:
+      labels:
+        app: kopf-operator
+    spec:
+      serviceAccountName: kopf-account
+      containers:
+      - name: kopf-operator
+        image: repository.charity-project.eu/one/clusterapi-with-openstack-provider/operator
+        imagePullPolicy: Always
+        env:
+        - name: WEBHOOK_SERVICE_NAME
+          value: kopf-operator
+        - name: WEBHOOK_SERVICE_NAMESPACE
+          value: orchestration
+        - name: KUBECONFIG
+          value: /kopf-operator/.config/capi/kubeconfig
+      imagePullSecrets:
+      - name: clusterapi-registry-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kopf-operator
+  namespace: orchestration
+  labels:
+    app: kopf-operator
+    service: kopf-operator
+spec:
+  ports:
+  - name: https
+    port: 6000
+    targetPort: 6000
+  - name: prometheus-metrics
+    port: 8000
+    targetPort: 8000
+  selector:
+    app: kopf-operator
+  type: LoadBalancer

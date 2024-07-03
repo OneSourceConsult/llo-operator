@@ -1,0 +1,39 @@
+apiVersion: charity-project.eu/v1
+kind: LowLevelOrchestration
+metadata:
+  name: kubeadm-based-orchestration
+spec:
+  clusters:
+    - provider: "kubeadm"
+      name: "green"
+      kubernetes-version: "v1.25.0"
+      control-plane-count: 1
+      control-plane-flavor: "m1.medium"
+      worker-machine-count: 0
+      worker-machine-flavor: "m1.medium"
+      image: "ubuntu-2004-kube-v1.25"
+    # - provider: "kubeadm"
+    #   name: "rose"
+    #   kubernetes-version: "v1.25.0"
+    #   control-plane-count: 1
+    #   control-plane-flavor: "m1.medium"
+    #   worker-machine-count: 0
+    #   worker-machine-flavor: "m1.medium"
+    #   image: "ubuntu-2004-kube-v1.25" 
+  links:
+  - - "rose"
+    - "green"
+  apps:
+    - name: httpbin
+      owner: charity-developer
+      cluster: kubeadm-based-orchestration-blue
+      components:
+        - name: httpbin
+          cluster-selector: kubeadm-based-orchestration-blue
+          image: docker.io/kong/httpbin
+          expose:
+          - is-public: true
+            # CHANGE FROM IS-PEERED TO IS-SERVICE
+            is-peered: true
+            containerPort: 80
+            clusterPort: 8000

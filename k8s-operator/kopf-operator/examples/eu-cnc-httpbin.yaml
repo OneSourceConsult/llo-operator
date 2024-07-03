@@ -1,0 +1,19 @@
+apiVersion: charity-project.eu/v1
+kind: LowLevelOrchestration
+metadata:
+  name: kubeadm-based-orchestration
+spec:
+  apps:
+    - name: httpbin
+      owner: charity-developer
+      cluster: kubeadm-based-orchestration-blue
+      components:
+        - name: httpbin
+          cluster-selector: kubeadm-based-orchestration-blue
+          image: docker.io/kong/httpbin
+          expose:
+          - is-public: true
+            # CHANGE FROM IS-PEERED TO IS-SERVICE
+            is-peered: true
+            containerPort: 80
+            clusterPort: 8000
